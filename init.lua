@@ -156,6 +156,11 @@ vim.opt.scrolloff = 10
 
 vim.opt.termguicolors = true
 
+vim.cmd [[highlight Normal guibg=#000000 ctermbg=NONE]]
+vim.cmd [[highlight NormalNC guibg=#000000 ctermbg=NONE]]
+vim.cmd [[highlight Pmenu guibg=#000000]]
+vim.cmd [[highlight FloatBorder guibg=#000000]]
+vim.cmd [[highlight NormalFloat guibg=#000000]]
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -198,6 +203,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+
+vim.keymap.set('n', '<leader>tt', function()
+  vim.cmd 'sp | term'
+end, { desc = 'Open terminal in horizontal split' })
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -790,22 +799,21 @@ require('lazy').setup({
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
-    --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    opts = {
-      transparent = true,
-      styles = {
-        sidebars = 'transparent',
-        floats = 'transparent',
-      },
-    },
+    'ellisonleao/gruvbox.nvim',
+    --   opts = {
+    --     transparent = true,
+    --     styles = {
+    --       sidebars = 'transparent',
+    --       floats = 'transparent',
+    --     },
+    --   },
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd.colorscheme 'gruvbox'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
