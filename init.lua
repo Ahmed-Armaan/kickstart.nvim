@@ -145,6 +145,10 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- do not copy upon deleting
+vim.keymap.set({ 'n', 'v' }, 'x', '"_x')
+vim.keymap.set({ 'n', 'v' }, 'd', '"_d')
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
