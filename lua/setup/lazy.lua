@@ -33,6 +33,8 @@ require("lazy").setup({
     { import = "setup.plugins.which-key" },
     { import = "setup.plugins.tailwind-colors" },
     { import = "setup.plugins.oil" },
+    { import = "setup.plugins.fidget" },
+    { import = "setup.plugins.render-markdown" },
     version = false, -- Last release is often too old
   },
   -- Configure any other settings here. See the documentation for more details.

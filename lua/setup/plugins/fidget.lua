@@ -1,5 +1,5 @@
 return{
-  "rebelot/kanagawa.nvim",
+  "j-hui/fidget.nvim",
   opts = {
     -- options
   },
