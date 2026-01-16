@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = ".todo.md",
+	pattern = "*.todo.md",
 	callback = function(data)
 		local buf = data.buf
 		local date_line = "## " .. os.date("%Y-%m-%d")

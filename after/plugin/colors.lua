@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "kanagawa"
+	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
 
 	--transparent_groups = {
@@ -17,7 +17,6 @@ function ColorMyPencils(color)
 	--for _, group in ipairs(transparent_groups) do
 	--	vim.api.nvim_set_hl(0, group, { bg = "none" })
 	--end
-
 end
 
 ColorMyPencils()

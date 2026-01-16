@@ -1,6 +1,6 @@
-return{
-  "rebelot/kanagawa.nvim",
-  opts = {
-    -- options
-  },
+return {
+	"ellisonleao/gruvbox.nvim",
+	priority = 1000,
+	config = true,
+	opts = ...
 }
