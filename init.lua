@@ -10,6 +10,7 @@ vim.opt.scrolloff = 8
 vim.opt.tabstop = 4
 vim.opt.swapfile = false
 vim.opt.winborder = "rounded"
+vim.opt.cmdheight = 0
 
 vim.api.nvim_create_autocmd('LspAttach', require('setup.lsp_actions'))
 vim.lsp.enable({ 'lua_ls' })
