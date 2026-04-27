@@ -1,17 +1,17 @@
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out,                            "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -23,23 +23,25 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
-  spec = {
-    -- import your plugins
-    { import = "setup.plugins.telescope" },
-    { import = "setup.plugins.colorscheme" },
-    { import = "setup.plugins.treesitter" },
-    { import = "setup.plugins.fugitive" },
-    { import = "setup.plugins.nvim-cmp" },
-    { import = "setup.plugins.which-key" },
-    { import = "setup.plugins.tailwind-colors" },
-    { import = "setup.plugins.oil" },
-    { import = "setup.plugins.fidget" },
-    { import = "setup.plugins.render-markdown" },
-    version = false, -- Last release is often too old
-  },
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+	spec = {
+		-- import your plugins
+		{ import = "setup.plugins.telescope" },
+		{ import = "setup.plugins.colorscheme" },
+		{ import = "setup.plugins.treesitter" },
+		{ import = "setup.plugins.fugitive" },
+		{ import = "setup.plugins.nvim-cmp" },
+		{ import = "setup.plugins.which-key" },
+		{ import = "setup.plugins.tailwind-colors" },
+		{ import = "setup.plugins.oil" },
+		{ import = "setup.plugins.fidget" },
+		{ import = "setup.plugins.render-markdown" },
+		{ import = "setup.plugins.lsp_signature" },
+		{ import = "setup.plugins.nvim-matchup" },
+		version = false, -- Last release is often too old
+	},
+	-- Configure any other settings here. See the documentation for more details.
+	-- colorscheme that will be used when installing plugins.
+	install = { colorscheme = { "habamax" } },
+	-- automatically check for plugin updates
+	checker = { enabled = true },
 })
